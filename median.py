@@ -1,5 +1,12 @@
 """Median calculator."""
-"""ENTER YOUR SOLUTION HERE!"""
+
+from math import floor
+
+def get_median(numbers):
+    n = len(numbers)
+    numbers = sorted(numbers)
+    return numbers[floor((n-1)/2)] if n%2==1 else \
+          (numbers[floor((n/2)-1)] + numbers[floor(n/2)])/2
 
 while True:
     try:
@@ -9,4 +16,5 @@ while True:
         print("Some input could not be converted to a number!")
     else:
         break
-print(numbers)
+
+print(get_median(numbers))
